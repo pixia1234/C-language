@@ -1,13 +1,27 @@
 #include <stdio.h>
-int main(int argc, char const *argv[]) {
-  char p[1000],*q;
-  scanf("%s",p);
-  q=p;
-  int i=0;
-  while(*q!='\0')
+char * del(char *a,char c)
+{
+  static char ans[100];
+  char *p=ans,*q=ans;
+  while(*a!='\0')
   {
-    if((*q-48)%2==1&&i%2==0) printf("%c",*q);
-    q++;   i++;
+    if(*a!=c)
+    {
+      *p=*a;
+      p++;
+    }
+    a++;
+  }
+  *p='\0';
+  return q;
+}
+int main(int argc, char const *argv[]) {
+  char s[100]="Hello world";
+  char c=getchar();
+  char *ans=del(s,c);
+  while(*ans!='\0')
+  { putchar(*ans);
+    ans++;
   }
   return 0;
 }
