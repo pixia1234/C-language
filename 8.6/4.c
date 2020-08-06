@@ -21,7 +21,7 @@ int main(int argc, char const *argv[]) {
   int *q,*qq;
   for(q=num;q<p-1;q++)
   {
-    for(qq=num+1;qq<p;qq++) ans+=maxyue(*q,*qq);
+    for(qq=q+1;qq<p;qq++) ans+=maxyue(*q,*qq);
   }
   printf("%d\n",ans);
   return 0;
